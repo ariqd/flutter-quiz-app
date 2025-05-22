@@ -17,11 +17,14 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Quiz App',
-      theme: ThemeData(primarySwatch: Colors.blue, textTheme: newTextTheme),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        textTheme: newTextTheme,
+      ),
       home: const GradientContainer(
         gradientColors: [
-          Color.fromARGB(255, 26, 2, 80),
-          Color.fromARGB(255, 45, 7, 98),
+          Color.fromARGB(255, 78, 13, 151),
+          Color.fromARGB(255, 107, 15, 168),
         ],
       ),
     );
