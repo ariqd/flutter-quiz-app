@@ -1,35 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/styled_text.dart';
 
-class QuizApp extends StatelessWidget {
-  const QuizApp({super.key});
+class StartScreen extends StatelessWidget {
+  const StartScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset(
           'assets/images/quiz-logo.png',
           width: 300,
+          color: const Color.fromARGB(150, 255, 255, 255),
         ),
+        // Opacity(
+        //   opacity: 0.6,
+        //   child: Image.asset(
+        //     'assets/images/quiz-logo.png',
+        //     width: 300,
+        //   ),
+        // ),
         const SizedBox(
-          height: 30,
+          height: 50,
         ),
         const Text(
           'Learn Flutter the fun way!',
           style: TextStyle(
             fontSize: 28,
             color: Colors.white,
-            fontWeight: FontWeight.bold,
           ),
         ),
         const SizedBox(
-          height: 20,
+          height: 25,
         ),
-        FilledButton(
-          onPressed: () {},
-          child: const StyledText('Start quiz'),
+        OutlinedButton.icon(
+          onPressed: () => {startQuiz()},
+          style: OutlinedButton.styleFrom(
+            foregroundColor: Colors.white,
+          ),
+          icon: const Icon(Icons.arrow_right_alt),
+          label: const StyledText('Start quiz'),
         ),
       ],
     );
